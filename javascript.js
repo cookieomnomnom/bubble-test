@@ -57,8 +57,13 @@ function stepOfSort(){
         paint(arrayDiv.children[j - 1], "#ecd9c0");
     }
     
-    if (parseInt(arrayDiv.children[j].innerHTML) >           parseInt(arrayDiv.children[j+1].innerHTML)){
-        changeElements(arrayDiv.children[j].innerHTML, arrayDiv.children[j+1].innerHTML);
+    if (parseInt(arrayDiv.children[j].innerHTML) > parseInt(arrayDiv.children[j+1].innerHTML)){
+        var temp = arrayDiv.children[j]; 
+        arrayDiv.removeChild(arrayDiv.children[j]);
+        if (j != arrayDiv.childElementCount - 1)
+            arrayDiv.insertBefore(temp, arrayDiv.children[j + 1]);
+        else 
+            arrayDiv.appendChild(temp);  
     }   
     paint(arrayDiv.children[j], "#c9b4ce");
     paint(arrayDiv.children[j + 1], "#c9b4ce");
@@ -71,15 +76,6 @@ function endOfSort(){
     document.getElementById("step").disabled=true;
     openDiv("initialArray");
     openDiv("sortedArray"); 
-}
-
-function changeElements(i,j){
-    var temp = arrayDiv.children[j]; 
-    arrayDiv.removeChild(arrayDiv.children[j]);
-    if (j != arrayDiv.childElementCount - 1)
-        arrayDiv.insertBefore(temp, arrayDiv.children[j + 1]);
-    else
-        arrayDiv.appendChild(temp);   
 }
 
 function paint(itemToPaint, color){
