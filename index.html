@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />    
+    <link rel="stylesheet" href="style.css">
+    <title>Bubble sort</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Bubble sort</h1>
+        <p>Сортировка пузырьком - самый естественный, он же самый медленный алгоритм сортировки.</p>
+        <p>Алгоритм пузырьковой сортировки просматривает массив чисел от начала до конца до тех пор, пока любые два рядом стоящих числа не будут расположены по возрастанию. Для этого два неверно расположенные одно относительно другого числа меняются местами. При этом наименьшее число, как пузырёк, постепенно всплывает к началу массива (а наибольшее сразу "тонет"), отсюда и название алгоритма.</p>
+        <p>Посмотрим, как работает пузырьковая сортировка на примере массива из 10 элементов:</p>
+        
+        <div>
+            <form>
+                <input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray"><input type="text" class="inputArray">
+                
+                
+                <input type="button" class="buttons" value="Создать массив" onclick="inputToDiv(); openDiv('hiddenButtons')">
+                  
+                
+                <div id="divForArray"> </div>
+                    
+                <div id="hiddenButtons" class="hidden">
+                    <input type="button" class="buttons"  id="step" value="Шаг вперед" onclick="stepOfSort()">
+                    <input type="reset" class="buttons" value="Сброс" onclick="resetArray()">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="tests">
+        <a href="test.html" target="_blank">Посмотреть тесты</a>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>
